@@ -15,6 +15,7 @@ import java.util.List;
 @Api(tags = "书籍管理")
 @RestController
 @RequestMapping("/cms/book")
+@CrossOrigin
 public class BookController {
 
     @Autowired
@@ -23,7 +24,6 @@ public class BookController {
     @ApiOperation("查询所有书籍的数据")
     @GetMapping
     private APICODE findAll() {
-        int i = 1/0;
 
         List<Book> list = bookService.findAll();
         return APICODE.OK().data("items",list);
