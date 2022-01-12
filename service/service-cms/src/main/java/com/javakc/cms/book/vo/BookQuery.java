@@ -12,7 +12,18 @@ import lombok.Data;
 @Data
 public class BookQuery {
 
+    private Integer id;
     private String bookName;
+    private String author;
+    private Integer lianzai;
+    private Integer zhuangtai;
+    private Integer yuanchuang ;
+    private String yijiFenlei ;
+    private String erjiFenlei;
+    private Integer shoufei;
+
+    private String shouquankaishiDate;
+    private String shouquanjieshuDate;
 
 
 }

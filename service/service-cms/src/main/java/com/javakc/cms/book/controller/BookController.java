@@ -35,13 +35,13 @@ public class BookController {
      */
     @ApiOperation("根据条件进行分页查询-书籍管理")
     @PostMapping("{pageNum}/{pageSize}")
-    private APICODE pageBook(BookQuery bookQuery , @PathVariable Integer pageNum, @PathVariable Integer pageSize){
+    private APICODE pageBook(@RequestBody(required = false) BookQuery bookQuery , @PathVariable Integer pageNum, @PathVariable Integer pageSize){
 
         Page<Book> page = bookService.pageBook(bookQuery, pageNum, pageSize);
         long totalElements = page.getTotalElements();  //得到数据总数
         List<Book> list = page.getContent();  //得到数据
 
-        APICODE apicode = APICODE.OK().data("bookName", totalElements).data("items", list);//返回给前端  数据总数   数据
+        APICODE apicode = APICODE.OK().data("total", totalElements).data("items", list);  //返回给前端  数据总数   数据
         return apicode;
     }
 
@@ -64,7 +64,7 @@ public class BookController {
      */
     @ApiOperation("根据出入的Id进行删除")
     @DeleteMapping("{bookId}")
-    public APICODE deleteBook(Integer bookId){
+    public APICODE deleteBook(@PathVariable Integer bookId){
         bookService.removeById(bookId);
         return APICODE.OK();
     }
@@ -75,7 +75,7 @@ public class BookController {
      */
     @ApiOperation("根据传入的ID先进行查询 获取到数据 然后修改")
     @GetMapping("{bookId}")
-    public APICODE view( Integer bookId){
+    public APICODE view ( @PathVariable Integer bookId){
         Book book = bookService.getById(bookId);  //根据id先获取到单条数据
         return APICODE.OK().data("Book",book);
     }

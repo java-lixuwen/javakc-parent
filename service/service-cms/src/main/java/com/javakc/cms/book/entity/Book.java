@@ -29,7 +29,47 @@ public class Book {
 
     @Column(name = "book_name")
     @ApiModelProperty(value = "书籍名称")
-    private String bookName;
+    private String bookName ;
+
+    @Column(name = "author")
+    @ApiModelProperty(value = "作者")
+    private String author ;
+
+    @Column(name = "yiji_fenlei")
+    @ApiModelProperty(value = "一级分类 1是  0否")
+    private String yijiFenlei ;
+
+    @Column(name = "erji_fenlei")
+    @ApiModelProperty(value = "二级分类 1是 0否")
+    private String erjiFenlei;
+
+    @Column(name = "is_lianzai")
+    @ApiModelProperty(value = "是否连载 1是 0否 ")
+    private int lianzai;
+
+    @Column(name = "word_number")
+    @ApiModelProperty(value = "总字数")
+    private int wordNumber;
+
+    @Column(name = "is_zhuangtai")
+    @ApiModelProperty(value = "状态 1上线  0未上线")
+    private int zhuangtai;
+
+    @Column(name = "is_shoufei")
+    @ApiModelProperty(value = "全本收费 1收费 0免费")
+    private int shoufei;
+
+    @Column(name = "shouquankaishi_time")
+    @ApiModelProperty(value = "授权开始时间")
+    private Date shouquankaishiTime;
+
+    @Column(name = "shouquanjieshu_time")
+    @ApiModelProperty(value = "授权结束时间")
+    private Date shouquanjieshuTime ;
+
+    @Column(name = "yuanchuang")
+    @ApiModelProperty(value = "原创 1是 0否")
+    private int yuanchuang ;
 
     @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT-8")
