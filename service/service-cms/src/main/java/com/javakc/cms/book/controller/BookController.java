@@ -34,10 +34,10 @@ public class BookController {
      * @return
      */
     @ApiOperation("根据条件进行分页查询-书籍管理")
-    @PostMapping("{pageNum}/{pageSize}")
-    private APICODE pageBook(@RequestBody(required = false) BookQuery bookQuery , @PathVariable Integer pageNum, @PathVariable Integer pageSize){
+    @PostMapping("{pageNo}/{pageSize}")
+    private APICODE pageBook(@RequestBody(required = false) BookQuery bookQuery , @PathVariable Integer pageNo, @PathVariable Integer pageSize){
 
-        Page<Book> page = bookService.pageBook(bookQuery, pageNum, pageSize);
+        Page<Book> page = bookService.pageBook(bookQuery, pageNo, pageSize);
         long totalElements = page.getTotalElements();  //得到数据总数
         List<Book> list = page.getContent();  //得到数据
 
@@ -77,7 +77,7 @@ public class BookController {
     @GetMapping("{bookId}")
     public APICODE view ( @PathVariable Integer bookId){
         Book book = bookService.getById(bookId);  //根据id先获取到单条数据
-        return APICODE.OK().data("Book",book);
+        return APICODE.OK().data("book",book);
     }
 
     /**
@@ -92,6 +92,15 @@ public class BookController {
         return APICODE.OK();
     }
 
-
+    @ApiOperation("书籍上下架状态")
+    @PutMapping("{bookId}/{zhuangtai}")
+    public APICODE shangxiajiaBook(@PathVariable Integer bookId, @PathVariable Integer zhuangtai){
+        // 根据id获取单条数据
+        Book book= bookService.getById(bookId);
+        book.setZhuangtai(zhuangtai); //设置数据状态
+        //修改
+        bookService.saveOrUpdate(book);
+        return APICODE.OK();
+    }
 
 }
