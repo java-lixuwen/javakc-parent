@@ -21,7 +21,6 @@ public class BookQuery {
     private String yijiFenlei ;
     private String erjiFenlei;
     private Integer shoufei;
-
     private String shouquankaishiDate;
     private String shouquanjieshuDate;
 
