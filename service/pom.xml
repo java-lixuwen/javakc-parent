@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>service-cms</module>
+        <module>service-oss</module>
+        <module>service-conpyriht</module>
     </modules>
 
     <dependencies>
