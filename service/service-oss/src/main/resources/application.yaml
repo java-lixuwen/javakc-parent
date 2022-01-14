@@ -1,0 +1,17 @@
+server:
+  port: 8003 # 服务端口
+
+spring:
+  application:
+    name: service-oss # 服务名   最好与idea中左侧栏的服务名一致
+  profiles:
+    active: dev # 环境设置:dev、test、prod      dev:开发环境  test：测试环境  prod:正式生产环境
+
+# 阿里云 OSS
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com      # oss中的 地域   在oss概览中第一个
+      keyid: LTAI5tJz8NH8Myp49zU4wFTn     #AuccessKey  在头像的下方-->创建AuccessKey --> 将创建的AuccessKeyid 粘贴过来
+      keysecret: pPizgl2x4xu9fVJMuRziNEu2x9MV7o   # 点击 AuccessKey -->右侧的 查看Secret -->获取验证码 -->粘贴过来
+      bucketname: javakc-wenjian          # 自己创建AuccessKey 的名字
