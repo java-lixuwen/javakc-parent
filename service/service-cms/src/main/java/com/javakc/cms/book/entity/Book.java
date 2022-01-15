@@ -71,6 +71,14 @@ public class Book {
     @ApiModelProperty(value = "原创 1是 0否")
     private int yuanchuang ;
 
+    @Column(name = "image_url")
+    @ApiModelProperty(value = "书封")
+    private String imageUrl ;
+
+    @Column(name = "jianjie")
+    @ApiModelProperty(value = "简介")
+    private String jianjie ;
+
     @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT-8")
     @Column(name = "chuangjian_time",nullable = false,updatable = false)
