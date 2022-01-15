@@ -1,7 +1,8 @@
 package com.javakc.conpyriht.banquanyinjin.dao;
 
 import com.javakc.conpyriht.banquanyinjin.entity.Banquanyinjin;
-import jpa.base.dao.BaseDao;
+import com.javakc.oss.commonutils.jpa.base.dao.BaseDao;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * @Progrom: javakc-parent
@@ -10,6 +11,6 @@ import jpa.base.dao.BaseDao;
  * @Outhor: lixuwen
  * @Create: 2022/1/14 22:03
  */
-public interface BanquanyinjinDao extends BaseDao<Banquanyinjin,Integer> {
+public interface BanquanyinjinDao extends BaseDao<Banquanyinjin, String> {
 
 }
