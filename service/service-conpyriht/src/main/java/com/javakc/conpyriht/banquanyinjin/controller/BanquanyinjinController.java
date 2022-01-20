@@ -23,6 +23,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/conpyriht/banquanyinjin")
 @Api(tags = "版权引进")
+@CrossOrigin
 public class BanquanyinjinController {
 
     @Autowired
