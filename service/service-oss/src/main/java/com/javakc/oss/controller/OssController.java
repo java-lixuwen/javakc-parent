@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 阿里云OSS存储-控制器
+ *
  * @Progrom: javakc-parent
  * @ClassName: OssController
  * @Description: TODO
@@ -27,20 +28,10 @@ public class OssController {
     @Autowired
     private OssService ossService;
 
-    @ApiOperation(value = "文件上传",notes = "阿里云OSS存储")
+    @ApiOperation(value = "文件上传", notes = "阿里云OSS存储")
     @PostMapping("uploadFile")
-    public APICODE uploadFile(MultipartFile file){
-        String uploadUrl= ossService.uploadFile(file);
-        return APICODE.OK().message("上传成功").data("uploadUrl",uploadUrl); // 返回给前台的url
+    public APICODE uploadFile(MultipartFile file) {
+        String uploadUrl = ossService.uploadFile(file);
+        return APICODE.OK().message("上传成功").data("uploadUrl", uploadUrl); // 返回给前台的url
     }
-
-
-    @ApiOperation(value = "修改文件上传",notes = "阿里云OSS存储")
-    @PostMapping("updateuploadFile")
-    public APICODE updateuploadFile(MultipartFile file){
-        String updateuploadUrl= ossService.updateuploadFile(file);
-        return APICODE.OK().message("上传成功").data("updateuploadUrl",updateuploadUrl); // 返回给前台的url
-    }
-
-
 }
