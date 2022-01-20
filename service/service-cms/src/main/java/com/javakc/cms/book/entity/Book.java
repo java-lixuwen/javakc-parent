@@ -36,11 +36,11 @@ public class Book {
     private String author ;
 
     @Column(name = "yiji_fenlei")
-    @ApiModelProperty(value = "一级分类 1是  0否")
+    @ApiModelProperty(value = "一级分类")
     private String yijiFenlei ;
 
     @Column(name = "erji_fenlei")
-    @ApiModelProperty(value = "二级分类 1是 0否")
+    @ApiModelProperty(value = "二级分类")
     private String erjiFenlei;
 
     @Column(name = "is_lianzai")
